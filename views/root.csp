@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+    <%c++
+        //auto title=@@.get<std::string>("title");
+        auto root =@@.get<std::string>("path");
+    %>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>[[ title ]]</title>
+    </head>
+    <body>
+        <p> {%root%} </p> 
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" id="file" name="file">
+            <input type="hidden" id="path" name="path" value="{%root%}">
+            <input type="submit">
+        </form>
+    </body>
+</html>
