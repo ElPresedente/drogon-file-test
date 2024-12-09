@@ -5,6 +5,10 @@ set(CMAKE_TOOLCHAIN_FILE ${PR_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
 cmake_minimum_required(VERSION 3.11)
 project(drogon-test CXX)
 
+message( "${CMAKE_CXX_COMPILER_ID}" )
+
+set(CMAKE_CXX_STANDARD 20)
+
 include(CheckIncludeFileCXX)
 
 check_include_file_cxx(any HAS_ANY)
@@ -23,7 +27,7 @@ endif ()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(${PROJECT_NAME} main.cc)
+add_executable(${PROJECT_NAME} main.cc sources/lib.cpp)
 
 include_directories(sources)
 
