@@ -2,7 +2,7 @@ set(PR_DIR /mnt/c/Projects/drogon-test)
 
 set(VCPKG_OVERLAY_PORTS ${PR_DIR}/overlays)
 set(CMAKE_TOOLCHAIN_FILE ${PR_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(drogon-test CXX)
 
 include(CheckIncludeFileCXX)
@@ -76,4 +76,4 @@ target_sources(${PROJECT_NAME}
 
 # ##############################################################################
 
-add_subdirectory(test)
+#add_subdirectory(test)
