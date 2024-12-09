@@ -2,4 +2,5 @@ CompileFlags:
   Add:[
     -std=c++17
     -I./build/vcpkg_installed/x64-linux/include/
+    -I./sources/
     ]

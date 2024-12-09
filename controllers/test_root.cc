@@ -1,4 +1,6 @@
 #include "test_root.h"
+#include <file_hash.hpp>
+#include <filesystem>
 
 // Add definition of your processing function here
 
@@ -31,7 +33,7 @@ void test_root::file_handler(const HttpRequestPtr& req, std::function<void (cons
 
 void test_root::send_file(const HttpRequestPtr& req, std::function<void (const HttpResponsePtr &)> &&callback, std::string p1) const{
     std::string filePath = "./uploads/" + p1;
-    std::cout << filePath << std::endl;
+    std::cout << calculate_string( fs::path( filePath )) << std::endl;
     if (!std::filesystem::exists(filePath)) {
         // Возвращаем 404, если файл не найден
         auto resp = drogon::HttpResponse::newNotFoundResponse();

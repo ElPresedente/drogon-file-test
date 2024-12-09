@@ -2,7 +2,7 @@ set(PR_DIR /mnt/c/Projects/drogon-test)
 
 set(VCPKG_OVERLAY_PORTS ${PR_DIR}/overlays)
 set(CMAKE_TOOLCHAIN_FILE ${PR_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.11)
 project(drogon-test CXX)
 
 include(CheckIncludeFileCXX)
@@ -24,6 +24,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME} main.cc)
+
+include_directories(sources)
 
 # ##############################################################################
 # If you include the drogon source code locally in your project, use this method
